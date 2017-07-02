@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language Code="EN" Name="English">
+  <Text Key="ISO639-1">EN</Text>
+  <Text Key="Convert">Convert</Text>
+  <Text Key="About">About</Text>
+  <Text Key="DropVideo">Drop a video here</Text>
+  <Text Key="Converting">Converting</Text>
+  <Text Key="ConversionFailed">Conversion failed</Text>
+  <Text Key="ConversionSuccessful">Conversion successful!</Text>
+  <Text Key="ViewInFolder">View in folder</Text>
+  <Text Key="Play">Play</Text>
+  <Text Key="Donate">Donate</Text>
+</Language>

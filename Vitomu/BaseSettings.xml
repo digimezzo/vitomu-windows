@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Namespace Name="Configuration">
+    <Setting Name="Version">
+      <Value>1</Value>
+    </Setting>
+    <Setting Name="IsPortable">
+      <Value>False</Value>
+    </Setting>
+    <Setting Name="Language">
+      <Value>EN</Value>
+    </Setting>
+  </Namespace>
+</Settings>

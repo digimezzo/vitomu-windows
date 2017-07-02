@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?define Version="1.0.0.3" ?>
+<?define Manufacturer="Digimezzo" ?>
+<?define Product="Vitomu" ?>
+<?define ProductCab="Vitomu.cab" ?>
+<?define DowngradeMessage="A newer version of this application is already installed. If you are sure you want to downgrade, remove the existing installation via Programs and Features." ?>
+<!--<?define License="Dopamine.License.rtf" ?>-->
+<?define BannerBmp="BannerBmp.bmp" ?>
+<?define DialogBmp="DialogBmp.bmp" ?>
+<?define UpgradeCode="BD847AE6-8751-4580-8C0C-DC88B44726EC"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="$(var.Product)" Language="1033" Version="$(var.Version)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)">
+    <!-- Packaging -->
+    <!-- ========= -->
+    <Package Description="$(var.Product)" Comments="$(var.Product)" InstallerVersion="500" Compressed="yes" />
+    <Media Id="1" Cabinet="$(var.ProductCab)" EmbedCab="yes" />
+    <MajorUpgrade AllowSameVersionUpgrades="yes" DowngradeErrorMessage="$(var.DowngradeMessage)" />
+    <InstallExecuteSequence>
+      <Custom Action="KillApplication" After="LaunchConditions"/>
+    </InstallExecuteSequence>
+    <!--<WixVariable Id="WixUILicenseRtf" Value="$(var.License)" />-->
+    <WixVariable Id="WixUIBannerBmp" Value="$(var.BannerBmp)" />
+    <WixVariable Id="WixUIDialogBmp" Value="$(var.DialogBmp)" />
+    <!-- Icons -->
+    <!-- ===== -->
+    <!-- This just defines an icon that can be used anywhere else -->
+    <Icon Id="$(var.Product).ico" SourceFile="$(var.Product).exe" />
+    <!-- Properties -->
+    <!-- ========== -->
+    <Property Id="WixShellExecTarget" Value="[#$(var.Product).exe]" />
+    <Property Id="QtExecCmdLine" Value='"taskkill.exe" /f /im $(var.Product).exe'/>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch $(var.Product)" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <!-- This adds an icon for Add/Remove Programs. The Value is the Id of the Icon defined above -->
+    <Property Id="ARPPRODUCTICON" Value="$(var.Product).ico" />
+    <!-- Custom actions -->
+    <!-- ============== -->
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+    <CustomAction Id="KillApplication" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="immediate" Return="ignore"/>
+    <!-- User interface -->
+    <!-- ============== -->
+    <UI>
+      <UIRef Id="DonateWixUI_InstallDir" />
+      <!-- Skip licence dialog (next 2 lines) -->
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg" Order="2">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">1</Publish>
+      <!-- Launch application -->
+      <Publish Dialog="DonateExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <!-- Directory tree -->
+    <!-- ============== -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- Start Menu -->
+      <Directory Id="ProgramMenuFolder"/>
+      <!-- Program Files -->
+      <Directory Id="ProgramFilesFolder" Name="PFiles">
+        <Directory Id="INSTALLFOLDER" Name="$(var.Product)">
+          <!-- Language -->
+          <Directory Id="LANGUAGESFOLDER" Name="Languages">
+            <Component Id="LANGUAGESCMP" DiskId="1" Guid="2C70C945-50F3-4155-B246-20C85323644F">
+              <File Source="Languages\EN.xml" />
+            </Component>
+          </Directory>
+          <!-- Application -->
+          <Component Id="MAINCMP" DiskId="1" Guid="25E65C63-30AD-43CE-B328-688BEFA30BB7">
+            <!-- Files -->
+            <File Source="Vitomu.exe">
+              <Shortcut Id="ExeShortcut" Directory="ProgramMenuFolder" Name="Vitomu" WorkingDirectory="INSTALLFOLDER" Icon="$(var.Product).ico" IconIndex="0" />
+            </File>
+            <File Source="Vitomu.exe.config" />
+            <File Source="Vitomu.Icons.dll" />
+            <File Source="License.txt" />
+            <File Source="Changelog.txt" />
+            <File Source="BaseSettings.xml" />
+            <File Source="GalaSoft.MvvmLight.dll" />
+            <File Source="GalaSoft.MvvmLight.Extras.dll" />
+            <File Source="GalaSoft.MvvmLight.Platform.dll" />
+            <File Source="Microsoft.Practices.ServiceLocation.dll" />
+            <File Source="System.Windows.Interactivity.dll" />
+            <File Source="GongSolutions.WPF.DragDrop.dll" />
+            <File Source="Digimezzo.Utilities.dll" />
+            <File Source="Digimezzo.WPFControls.dll" />
+            <File Source="ffmpeg.exe" />
+            <File Source="ffprobe.exe" />
+            <File Source="youtube-dl.exe" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+    <!-- Components to add -->
+    <!-- ================= -->
+    <Feature Id="DefaultFeature" Title="Main Feature" Level="1">
+      <ComponentRef Id="LANGUAGESCMP" />
+      <ComponentRef Id="MAINCMP" />
+    </Feature>
+  </Product>
+  <!-- Customization -->
+  <!-- ============= -->
+  <Fragment>
+    <UI Id="DonateWixUI_InstallDir">
+      <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />
+      <TextStyle Id="WixUI_Font_Title" FaceName="Tahoma" Size="9" Bold="yes" />
+
+      <Property Id="DefaultUIFont" Value="WixUI_Font_Normal" />
+      <Property Id="WixUI_Mode" Value="InstallDir" />
+
+      <DialogRef Id="BrowseDlg" />
+      <DialogRef Id="DiskCostDlg" />
+      <DialogRef Id="ErrorDlg" />
+      <DialogRef Id="FatalError" />
+      <DialogRef Id="FilesInUse" />
+      <DialogRef Id="MsiRMFilesInUse" />
+      <DialogRef Id="PrepareDlg" />
+      <DialogRef Id="ProgressDlg" />
+      <DialogRef Id="ResumeDlg" />
+      <DialogRef Id="UserExit" />
+
+      <Publish Dialog="BrowseDlg" Control="OK" Event="DoAction" Value="WixUIValidatePath" Order="3">1</Publish>
+      <Publish Dialog="BrowseDlg" Control="OK" Event="SpawnDialog" Value="InvalidDirDlg" Order="4"><![CDATA[WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+
+      <Publish Dialog="DonateExitDialog" Control="Finish" Event="EndDialog" Value="Return" Order="999">1</Publish>
+
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="LicenseAgreementDlg">NOT Installed</Publish>
+      <Publish Dialog="WelcomeDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg">Installed AND PATCH</Publish>
+
+      <Publish Dialog="LicenseAgreementDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg">1</Publish>
+      <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="InstallDirDlg">LicenseAccepted = "1"</Publish>
+
+      <Publish Dialog="InstallDirDlg" Control="Back" Event="NewDialog" Value="LicenseAgreementDlg">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="SetTargetPath" Value="[WIXUI_INSTALLDIR]" Order="1">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="DoAction" Value="WixUIValidatePath" Order="2">NOT WIXUI_DONTVALIDATEPATH</Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="SpawnDialog" Value="InvalidDirDlg" Order="3"><![CDATA[NOT WIXUI_DONTVALIDATEPATH AND WIXUI_INSTALLDIR_VALID<>"1"]]></Publish>
+      <Publish Dialog="InstallDirDlg" Control="Next" Event="NewDialog" Value="VerifyReadyDlg" Order="4">WIXUI_DONTVALIDATEPATH OR WIXUI_INSTALLDIR_VALID="1"</Publish>
+      <Publish Dialog="InstallDirDlg" Control="ChangeFolder" Property="_BrowseProperty" Value="[WIXUI_INSTALLDIR]" Order="1">1</Publish>
+      <Publish Dialog="InstallDirDlg" Control="ChangeFolder" Event="SpawnDialog" Value="BrowseDlg" Order="2">1</Publish>
+
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="InstallDirDlg" Order="1">NOT Installed</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="MaintenanceTypeDlg" Order="2">Installed AND NOT PATCH</Publish>
+      <Publish Dialog="VerifyReadyDlg" Control="Back" Event="NewDialog" Value="WelcomeDlg" Order="2">Installed AND PATCH</Publish>
+
+      <Publish Dialog="MaintenanceWelcomeDlg" Control="Next" Event="NewDialog" Value="MaintenanceTypeDlg">1</Publish>
+
+      <Publish Dialog="MaintenanceTypeDlg" Control="RepairButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="RemoveButton" Event="NewDialog" Value="VerifyReadyDlg">1</Publish>
+      <Publish Dialog="MaintenanceTypeDlg" Control="Back" Event="NewDialog" Value="MaintenanceWelcomeDlg">1</Publish>
+
+      <Property Id="ARPNOMODIFY" Value="1" />
+    </UI>
+
+    <UIRef Id="WixUI_Common" />
+  </Fragment>
+  <Fragment>
+    <UI>
+      <Dialog Id="DonateExitDialog" Width="370" Height="270" Title="!(loc.ExitDialog_Title)">
+        <Control Id="Finish" Type="PushButton" X="236" Y="243" Width="56" Height="17" Default="yes" Cancel="yes" Text="!(loc.WixUIFinish)" />
+        <Control Id="Cancel" Type="PushButton" X="304" Y="243" Width="56" Height="17" Disabled="yes" Text="!(loc.WixUICancel)" />
+        <Control Id="Bitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="234" TabSkip="no" Text="!(loc.ExitDialogBitmap)" />
+        <Control Id="Back" Type="PushButton" X="180" Y="243" Width="56" Height="17" Disabled="yes" Text="!(loc.WixUIBack)" />
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+        <Control Id="Description" Type="Text" X="135" Y="70" Width="220" Height="40" Transparent="yes" NoPrefix="yes" Text="!(loc.ExitDialogDescription)" />
+        <Control Id="Title" Type="Text" X="135" Y="20" Width="220" Height="60" Transparent="yes" NoPrefix="yes" Text="!(loc.ExitDialogTitle)" />
+        <Control Id="OptionalText" Type="Text" X="135" Y="110" Width="220" Height="80" Transparent="yes" NoPrefix="yes" Hidden="yes" Text="[WIXUI_EXITDIALOGOPTIONALTEXT]">
+          <Condition Action="show">WIXUI_EXITDIALOGOPTIONALTEXT AND NOT Installed</Condition>
+        </Control>
+        <Control Id="DonateHyperLink" Type="Hyperlink" X="135" Y="125" Height="40" Width="200" Transparent="yes">
+          <Text>
+            <![CDATA[If you like this software, please consider donating.
+Thank you! <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MQALEWTEZ7HX8">Donate via PayPal</a>]]>
+          </Text>
+        </Control>
+        <Control Id="OptionalCheckBoxText" Type="Text" X="148" Y="190" Width="200" Height="15" Transparent="yes" NoPrefix="yes" Text="[WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT]">
+          <Condition Action="show">WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT AND NOT Installed</Condition>
+        </Control>
+        <Control Id="OptionalCheckBox" Type="CheckBox" X="135" Y="190" Width="10" Height="10" Hidden="yes" Property="WIXUI_EXITDIALOGOPTIONALCHECKBOX" CheckBoxValue="1" Text="[WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT]">
+          <Condition Action="show">WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT AND NOT Installed</Condition>
+        </Control>
+      </Dialog>
+      <InstallUISequence>
+        <Show Dialog="DonateExitDialog" OnExit="success" Overridable="yes" />
+      </InstallUISequence>
+
+      <AdminUISequence>
+        <Show Dialog="DonateExitDialog" OnExit="success" Overridable="yes" />
+      </AdminUISequence>
+    </UI>
+  </Fragment>
+</Wix>

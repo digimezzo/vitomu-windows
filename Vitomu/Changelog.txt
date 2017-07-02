@@ -1,0 +1,6 @@
+2017-07-02: Vitomu 1.0 Build 3
+------------------------------
+
+- First release
+- Converts online videos to mp3
+- Converts local MKV and MP4 videos to mp3

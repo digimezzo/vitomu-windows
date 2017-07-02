@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Packager>
+  <Packaging>
+    <PackageDirectory>C:\Temp\Vitomu</PackageDirectory>
+    <Installable>
+      <WixBinDirectory>C:\Program Files (x86)\WiX Toolset v3.10\bin</WixBinDirectory>
+    </Installable>
+    <Portable>
+      <Directories>
+        <Directory>Languages</Directory>
+      </Directories>
+      <Files>
+        <File>Vitomu.exe</File>
+        <File>Vitomu.exe.config</File>
+        <File>Vitomu.Icons.dll</File>
+        <File>License.txt</File>
+        <File>Changelog.txt</File>
+        <File>BaseSettings.xml</File>
+        <File>GalaSoft.MvvmLight.dll</File>
+        <File>GalaSoft.MvvmLight.Extras.dll</File>
+        <File>GalaSoft.MvvmLight.Platform.dll</File>
+        <File>GongSolutions.WPF.DragDrop.dll</File>
+        <File>Microsoft.Practices.ServiceLocation.dll</File>
+        <File>Digimezzo.Utilities.dll</File>
+        <File>Digimezzo.WPFControls.dll</File>
+        <File>System.Windows.Interactivity.dll</File>
+        <File>ffmpeg.exe</File>
+        <File>ffprobe.exe</File>
+        <File>youtube-dl.exe</File>
+      </Files>
+    </Portable>
+  </Packaging>
+</Packager>
+

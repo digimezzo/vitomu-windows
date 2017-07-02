@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitomu", "Vitomu\Vitomu.csproj", "{63033F91-9568-4829-B428-B981B1210F1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vitomu.Packager", "Vitomu.Packager\Vitomu.Packager.csproj", "{87E45ED3-A318-48AC-B887-7AA1DCFB190A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63033F91-9568-4829-B428-B981B1210F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63033F91-9568-4829-B428-B981B1210F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63033F91-9568-4829-B428-B981B1210F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63033F91-9568-4829-B428-B981B1210F1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87E45ED3-A318-48AC-B887-7AA1DCFB190A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E45ED3-A318-48AC-B887-7AA1DCFB190A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E45ED3-A318-48AC-B887-7AA1DCFB190A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E45ED3-A318-48AC-B887-7AA1DCFB190A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

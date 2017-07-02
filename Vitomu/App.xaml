@@ -1,0 +1,27 @@
+﻿<Application x:Class="Vitomu.App" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             StartupUri="Shell.xaml" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dconverters="clr-namespace:Digimezzo.WPFControls.Converters;assembly=Digimezzo.WPFControls"
+             xmlns:converters="clr-namespace:Vitomu.Converters"
+             d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006">
+  <Application.Resources>
+        <ResourceDictionary>
+            <dconverters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <dconverters:BooleanToCollapsedConverter x:Key="BooleanToCollapsedConverter"/>
+            <dconverters:InvertingBooleanToVisibilityConverter x:Key="InvertingBooleanToVisibilityConverter"/>
+            <dconverters:InvertingBooleanToCollapsedConverter x:Key="InvertingBooleanToCollapsedConverter"/>
+            <converters:ConvertStateIdleToVisibilityConverter x:Key="ConvertStateIdleToVisibilityConverter"/>
+            <converters:ConvertStateBusyToVisibilityConverter x:Key="ConvertStateBusyToVisibilityConverter"/>
+            <converters:ConvertStateSuccessToVisibilityConverter x:Key="ConvertStateSuccessToVisibilityConverter"/>
+            <converters:ConvertStateFailedToVisibilityConverter x:Key="ConvertStateFailedToVisibilityConverter"/>
+            <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:Vitomu.ViewModels" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Vitomu;component/Resources/Styles/All.xaml"/>
+                <ResourceDictionary Source="/Vitomu;component/Resources/Themes/VitomuTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
