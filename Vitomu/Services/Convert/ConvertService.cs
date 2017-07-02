@@ -191,7 +191,7 @@ namespace Vitomu.Services.Convert
                 ProcessStartInfo youtubeDlStartInfo = new ProcessStartInfo()
                 {
                     FileName = "youtube-dl.exe",
-                    Arguments = $"{uri} --no-playlist --output \"{tempFolder}\\%(title)s.%(ext)s\" -f bestaudio --extract-audio --audio-format mp3",
+                    Arguments = $"{uri} --no-playlist --output \"{tempFolder}\\%(title)s.%(ext)s\" -f bestaudio --extract-audio --audio-format mp3 --audio-quality 320k",
                     CreateNoWindow = true,
                     RedirectStandardError = true,
                     RedirectStandardInput = true,
