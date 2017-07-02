@@ -1,2 +1,2 @@
 # Vitomu
-Easy to use video to audio converter
+Easy to use **Vi**deo **to** **mu**sic converter
