@@ -39,18 +39,7 @@ namespace Vitomu.Services.Convert
             this.workingFolder = Path.Combine(SettingsClient.ApplicationFolder(), "Working");
 
             // Create the music folder. If this fails, we cannot continue (let it crash).
-            try
-            {
-                if (!Directory.Exists(this.musicFolder))
-                {
-                    Directory.CreateDirectory(this.musicFolder);
-                }
-            }
-            catch (Exception ex)
-            {
-                LogClient.Error("An error occurred while creating the music folder {0}. Exception: {1}", this.musicFolder, ex.Message);
-                throw;
-            }
+            this.CreateMusicFolder();
 
             // Try to delete the working folder. If it fails: no problem.
             try
@@ -116,6 +105,23 @@ namespace Vitomu.Services.Convert
         #endregion
 
         #region Private
+        private void CreateMusicFolder()
+        {
+            // Create the music folder. If this fails, we cannot continue (let it crash).
+            try
+            {
+                if (!Directory.Exists(this.musicFolder))
+                {
+                    Directory.CreateDirectory(this.musicFolder);
+                }
+            }
+            catch (Exception ex)
+            {
+                LogClient.Error("An error occurred while creating the music folder {0}. Exception: {1}", this.musicFolder, ex.Message);
+                throw;
+            }
+        }
+
         private bool IsVideoUrl(string uri)
         {
             try
@@ -293,6 +299,9 @@ namespace Vitomu.Services.Convert
 
         private void ProcessAudioFile(string tempFolder)
         {
+            // Create the music folder. If this fails, we cannot continue (let it crash).
+            this.CreateMusicFolder();
+
             try
             {
                 // Move the audio file to the music folder
