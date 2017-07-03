@@ -95,18 +95,27 @@
     <Compile Include="Services\Convert\ConvertService.cs" />
     <Compile Include="Services\Convert\ConvertState.cs" />
     <Compile Include="Services\Convert\IConvertService.cs" />
+    <Compile Include="Services\Dialog\CustomDialog.xaml.cs">
+      <DependentUpon>CustomDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\Dialog\DialogService.cs" />
+    <Compile Include="Services\Dialog\IDialogService.cs" />
     <Compile Include="Services\I18n\I18nService.cs" />
     <Compile Include="Services\I18n\II18nService.cs" />
     <Compile Include="Services\I18n\Language.cs" />
     <Compile Include="Services\WindowsIntegration\IJumpListService.cs" />
     <Compile Include="Services\WindowsIntegration\JumpListService.cs" />
     <Compile Include="SharedAssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutLicenseViewModel.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\ConvertViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AboutLicense.xaml.cs">
+      <DependentUpon>AboutLicense.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Convert.xaml.cs">
       <DependentUpon>Convert.xaml</DependentUpon>
@@ -133,7 +142,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Styles\LinkButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\MaterialButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Styles\Texts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Services\Dialog\CustomDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -162,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AboutLicense.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

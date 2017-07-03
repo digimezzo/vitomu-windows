@@ -4,6 +4,8 @@
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/FontFamilies.xaml" />
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/Geometries.xaml" />
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/HamburgerButtonStyle.xaml" />
+        <ResourceDictionary Source="/Vitomu;component/Resources/Styles/MaterialButton.xaml" />
+        <ResourceDictionary Source="/Vitomu;component/Resources/Styles/LinkButton.xaml" />
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/Texts.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

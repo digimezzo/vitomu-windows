@@ -12,13 +12,13 @@
 
     <DockPanel>
         <Border DockPanel.Dock="Top" Background="{DynamicResource Brush_Grey}" Height="29">
-            <TextBlock Text="{Binding ApplicationDisplayName}" Foreground="{DynamicResource Brush_LightGrey}" VerticalAlignment=" Center" Margin="10,0,0,0"/>
+            <TextBlock Text="{Binding ApplicationDisplayName}" Foreground="{DynamicResource Brush_LightGrey}" VerticalAlignment=" Center" Margin="8,0,0,0"/>
         </Border>
         <controls:Pivot IndicatorHeight="2" IndicatorBackground="{DynamicResource Brush_Pink}" HeaderBackground="{DynamicResource Brush_Grey}" Elevation="0">
-            <controls:PivotItem Header="{DynamicResource Language_Convert}" Foreground="{DynamicResource Brush_LightGrey}" Padding="10,6,10,6" SelectedForeground="{DynamicResource Brush_White}" FontSize="24" FontWeight="Light" SelectedFontWeight="Light">
+            <controls:PivotItem Header="{DynamicResource Language_Convert}" Foreground="{DynamicResource Brush_LightGrey}" Padding="10,6,10,6" SelectedForeground="{DynamicResource Brush_White}" HeaderFontSize="24" FontWeight="Light" SelectedFontWeight="Light">
                 <views:Convert/>
             </controls:PivotItem>
-            <controls:PivotItem Header="{DynamicResource Language_About}" Foreground="{DynamicResource Brush_LightGrey}" Padding="10,6,10,6" SelectedForeground="{DynamicResource Brush_White}" FontSize="24" FontWeight="Light" SelectedFontWeight="Light">
+            <controls:PivotItem Header="{DynamicResource Language_About}" Foreground="{DynamicResource Brush_LightGrey}" Padding="10,6,10,6" SelectedForeground="{DynamicResource Brush_White}" HeaderFontSize="24" FontWeight="Light" SelectedFontWeight="Light">
                 <views:About/>
             </controls:PivotItem>
         </controls:Pivot>

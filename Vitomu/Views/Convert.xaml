@@ -65,23 +65,23 @@
     </UserControl.Resources>
 
     <DockPanel>
-        <Border Margin="10" DockPanel.Dock="Bottom" Height="30" Visibility="{Binding CanViewConvertedFile,Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Border Margin="16" DockPanel.Dock="Bottom" Height="32" Visibility="{Binding CanViewConvertedFile,Converter={StaticResource BooleanToVisibilityConverter}}">
             <DockPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" >
-                    <Button x:Name="ViewInFolderButton" ToolTip="{DynamicResource Language_ViewInFolder}" Style="{StaticResource RoundButton}" Width="30" Height="30" Command="{Binding ViewInFolderCommand}">
+                    <Button x:Name="ViewInFolderButton" ToolTip="{DynamicResource Language_ViewInFolder}" Style="{StaticResource RoundButton}" Width="32" Height="32" Command="{Binding ViewInFolderCommand}">
                         <TextBlock FontFamily="{StaticResource MaterialIcons}" FontSize="18" Text="&#xE2C7;" Foreground="{DynamicResource Brush_LightGrey}"/>
                     </Button>
-                    <Button x:Name="PlayButton" ToolTip="{DynamicResource Language_Play}" Style="{StaticResource RoundButton}" Margin="10,0,0,0" Width="30" Height="30" Command="{Binding PlayCommand}">
+                    <Button x:Name="PlayButton" ToolTip="{DynamicResource Language_Play}" Style="{StaticResource RoundButton}" Margin="8,0,0,0" Width="32" Height="32" Command="{Binding PlayCommand}">
                         <TextBlock FontFamily="{StaticResource MaterialIcons}" FontSize="22" Text="&#xE037;" Foreground="{DynamicResource Brush_LightGrey}"/>
                     </Button>
                 </StackPanel>
                 <TextBlock VerticalAlignment="Center" Text="{Binding ConvertedFileName}" ToolTip="{Binding ConvertedFileName}" Foreground="{DynamicResource Brush_LightGrey}" FontSize="13" TextTrimming="CharacterEllipsis"/>
             </DockPanel>
         </Border>
-        <DockPanel Margin="30,80,30,30">
+        <DockPanel Margin="32,82,32,32">
             <TextBlock Text="{Binding ProgressInformation}" 
                        DockPanel.Dock="Bottom"
-                       Margin="0,10,0,0"
+                       Margin="0,8,0,0"
                        FontSize="26" 
                        HorizontalAlignment="Center"
                        Foreground="{DynamicResource Brush_LightGrey}" />

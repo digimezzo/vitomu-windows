@@ -7,8 +7,10 @@ using System.Windows;
 using System.Windows.Shell;
 using Vitomu.Extensions;
 using Vitomu.Services.Convert;
+using Vitomu.Services.Dialog;
 using Vitomu.Services.I18n;
 using Vitomu.Services.WindowsIntegration;
+using Vitomu.Views;
 
 namespace Vitomu
 {
@@ -32,6 +34,7 @@ namespace Vitomu
             this.ProcessCommandLineArguments();
 
             // Make sure services are ready
+            this.RegisterViews();
             this.RegisterServices();
             this.InitializeServices();
         }
@@ -75,6 +78,12 @@ namespace Vitomu
             SimpleIoc.Default.RegisterOnce<II18nService, I18nService>();
             SimpleIoc.Default.RegisterOnce<IConvertService, ConvertService>();
             SimpleIoc.Default.RegisterOnce<IJumpListService, JumpListService>();
+            SimpleIoc.Default.RegisterOnce<IDialogService, DialogService>();
+        }
+
+        private void RegisterViews()
+        {
+            SimpleIoc.Default.Register<AboutLicense>();
         }
 
         private void InitializeServices()

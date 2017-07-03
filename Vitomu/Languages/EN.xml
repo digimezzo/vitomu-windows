@@ -10,4 +10,7 @@
   <Text Key="ViewInFolder">View in folder</Text>
   <Text Key="Play">Play</Text>
   <Text Key="Donate">Donate</Text>
+  <Text Key="Version">Version</Text>
+  <Text Key="License">License</Text>
+  <Text Key="Ok">Ok</Text>
 </Language>

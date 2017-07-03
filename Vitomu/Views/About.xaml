@@ -6,20 +6,30 @@
              xmlns:base="clr-namespace:Vitomu.Base"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
-             DataContext="{Binding Convert, Source={StaticResource Locator}}">
+             DataContext="{Binding About, Source={StaticResource Locator}}">
 
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5,0,5,15" Padding="10,0,10,0" PanningMode="Both">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="6,16,6,16" Padding="10,0,10,0" PanningMode="Both">
         <StackPanel>
             <Label Style="{StaticResource TitleLabel}" Content="{DynamicResource Language_About}" />
-            <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
                 <Grid>
-                    <Ellipse Width="60" Height="60" Fill="{DynamicResource Brush_White}"/>
-                    <Viewbox Panel.ZIndex="1" Width="70" Height="70">
+                    <Ellipse Width="50" Height="50" Fill="{DynamicResource Brush_White}"/>
+                    <Viewbox Panel.ZIndex="1" Width="56" Height="56">
                         <Path Data="{StaticResource VitomuIcon}" Fill="{DynamicResource Brush_Pink}"/>
                     </Viewbox>
                 </Grid>
                 <Label Margin="15,-4,0,0" Padding="0" VerticalAlignment="Center" Content="{x:Static base:ProductInformation.ApplicationDisplayName}" Foreground="{DynamicResource Brush_White}" FontWeight="Light" FontSize="44"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                <TextBlock Text="{DynamicResource Language_Version}" Foreground="{DynamicResource Brush_White}"/>
+                <TextBlock Text=":" Margin="0,0,8,0" Foreground="{DynamicResource Brush_White}"/>
+                <TextBlock Text="{Binding Package.FormattedVersion}" Margin="0,0,8,0" FontWeight="Bold" Foreground="{DynamicResource Brush_White}"/>
+                <Border Background="{DynamicResource Brush_Pink}" Padding="4,2,4,2" CornerRadius="2">
+                    <TextBlock Text="{Binding Package.Label}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Brush_White}"/>
+                </Border>
+            </StackPanel>
+            <TextBlock Text="{x:Static base:ProductInformation.Copyright}" Margin="0,8,0,0" Foreground="{DynamicResource Brush_White}"/>
+            <Button Margin="0,8,0,0" Content="{DynamicResource Language_License}" Style="{StaticResource LinkButton}" Command="{Binding ShowLicenseCommand}"/>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

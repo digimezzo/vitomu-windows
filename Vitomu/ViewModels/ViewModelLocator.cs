@@ -16,6 +16,7 @@ namespace Vitomu.ViewModels
         #region Properties
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
         public AboutViewModel About => ServiceLocator.Current.GetInstance<AboutViewModel>();
+        public AboutLicenseViewModel AboutLicense => ServiceLocator.Current.GetInstance<AboutLicenseViewModel>();
         public ConvertViewModel Convert => ServiceLocator.Current.GetInstance<ConvertViewModel>();
         #endregion
 
@@ -31,6 +32,7 @@ namespace Vitomu.ViewModels
         {
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<AboutViewModel>();
+            SimpleIoc.Default.Register<AboutLicenseViewModel>();
             SimpleIoc.Default.Register<ConvertViewModel>();
         }
         #endregion
