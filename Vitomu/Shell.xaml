@@ -12,7 +12,8 @@
                        MinHeight="450"
                        MinWidth="450"
                        Width="450"
-                       Height="450">
+                       Height="450"
+                       KeyDown="VitomuWindow_KeyDown">
 
     <Frame x:Name="ShellFrame" NavigationUIVisibility="Hidden"/>
 </controls:VitomuWindow>
