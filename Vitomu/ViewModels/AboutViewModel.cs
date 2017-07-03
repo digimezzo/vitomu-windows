@@ -1,9 +1,11 @@
 ﻿using Digimezzo.Utilities.IO;
+using Digimezzo.Utilities.Log;
 using Digimezzo.Utilities.Packaging;
 using Digimezzo.Utilities.Utils;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Ioc;
+using System;
 using Vitomu.Services.Dialog;
 using Vitomu.Views;
 
@@ -18,6 +20,7 @@ namespace Vitomu.ViewModels
 
         #region Commands
         public RelayCommand ShowLicenseCommand { get; set; }
+        public RelayCommand<string> OpenLinkCommand { get; set; }
         #endregion
 
         #region Properties
@@ -60,6 +63,18 @@ namespace Vitomu.ViewModels
                     ResourceUtils.GetStringResource("Language_Ok"),
                     string.Empty,
                     null);
+            });
+
+            this.OpenLinkCommand = new RelayCommand<string>((link) =>
+            {
+                try
+                {
+                    Actions.TryOpenLink(link);
+                }
+                catch (Exception ex)
+                {
+                    LogClient.Error("Could not open the link {0} in Internet Explorer. Exception: {1}", link, ex.Message);
+                }
             });
         }
         #endregion

@@ -13,4 +13,11 @@
   <Text Key="Version">Version</Text>
   <Text Key="License">License</Text>
   <Text Key="Ok">Ok</Text>
+  <Text Key="Do_You_Like_Application">Do you like this application? Please click here to donate. Thank you!</Text>
+  <Text Key="Donate_With_PayPal">Donate with PayPal</Text>
+  <Text Key="Contact_Us">Contact us</Text>
+  <Text Key="Website">Website</Text>
+  <Text Key="Email">Email</Text>
+  <Text Key="Social_Networks">Social networks</Text>
+  <Text Key="Components">Components</Text>
 </Language>
