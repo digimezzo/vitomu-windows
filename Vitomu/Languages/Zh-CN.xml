@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Language Code="Zh-CN" Name="简体中文">
+  <Text Key="ISO639-1">简体中文</Text>
+  <Text Key="Convert">转换</Text>
+  <Text Key="About">关于</Text>
+  <Text Key="DropVideo">拖入视频到此处</Text>
+  <Text Key="Converting">转换中</Text>
+  <Text Key="ConversionFailed">转换失败</Text>
+  <Text Key="ConversionSuccessful">转换成功！</Text>
+  <Text Key="ViewInFolder">在文件夹中显示</Text>
+  <Text Key="Play">播放</Text>
+  <Text Key="Donate">捐助</Text>
+</Language>
