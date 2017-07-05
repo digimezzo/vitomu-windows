@@ -20,4 +20,6 @@
   <Text Key="Email">Email</Text>
   <Text Key="Social_Networks">Social networks</Text>
   <Text Key="Components">Components</Text>
+  <Text Key="Downloading">Downloading</Text>
+  <Text Key="Processing">Processing</Text>
 </Language>

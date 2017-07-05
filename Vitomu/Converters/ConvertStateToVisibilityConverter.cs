@@ -25,7 +25,7 @@ namespace Vitomu.Converters
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             ConvertState state = (ConvertState)value;
-            return state == ConvertState.BusyPercent || state ==  ConvertState.BusyIndeterminate ? Visibility.Visible : Visibility.Hidden;
+            return state == ConvertState.Processing || state == ConvertState.Downloading || state ==  ConvertState.Converting ? Visibility.Visible : Visibility.Hidden;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

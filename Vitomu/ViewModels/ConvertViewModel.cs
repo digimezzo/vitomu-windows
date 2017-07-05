@@ -97,13 +97,21 @@ namespace Vitomu.ViewModels
                     case ConvertState.Idle:
                         this.ProgressInformation = ResourceUtils.GetStringResource("Language_DropVideo");
                         break;
-                    case ConvertState.BusyPercent:
-
-                        this.ProgressInformation = ResourceUtils.GetStringResource("Language_Converting") + " " + Convert.ToInt32(progressPercent).ToString() + "%";
+                    case ConvertState.Processing:
+                        this.ProgressInformation = string.Concat(
+                            ResourceUtils.GetStringResource("Language_Processing"),
+                            progressPercent == -1 ? "..." : " " + Convert.ToInt32(progressPercent).ToString() + "%");
                         break;
-                    case ConvertState.BusyIndeterminate:
+                    case ConvertState.Downloading:
 
-                        this.ProgressInformation = ResourceUtils.GetStringResource("Language_Converting") + "...";
+                        this.ProgressInformation = string.Concat(
+                            ResourceUtils.GetStringResource("Language_Downloading"),
+                            progressPercent == -1 ? "..." : " " + Convert.ToInt32(progressPercent).ToString() + "%");
+                        break;
+                    case ConvertState.Converting:
+                        this.ProgressInformation = string.Concat(
+                            ResourceUtils.GetStringResource("Language_Converting"),
+                            progressPercent == -1 ? "..." : " " + Convert.ToInt32(progressPercent).ToString() + "%");
                         break;
                     case ConvertState.Success:
                         this.ProgressInformation = ResourceUtils.GetStringResource("Language_ConversionSuccessful");

@@ -67,7 +67,7 @@ namespace Vitomu.Services.Convert
                 LogClient.Error("An error occurred while creating the music folder {0}. Exception: {1}", this.workingFolder, ex.Message);
                 throw;
             }
-  
+
             this.convertState = ConvertState.Idle;
 
             convertStateResetTimer.Elapsed += ConvertStateResetTimer_Elapsed;
@@ -147,7 +147,7 @@ namespace Vitomu.Services.Convert
             return false;
         }
 
-        private void SetConvertState(ConvertState convertState, double convertPercent = 0)
+        private void SetConvertState(ConvertState convertState, double convertPercent = -1)
         {
             convertStateResetTimer.Stop();
             this.convertState = convertState;
@@ -190,7 +190,7 @@ namespace Vitomu.Services.Convert
         }
         private void ConvertOnlineVideo(string tempFolder, string uri)
         {
-            this.SetConvertState(ConvertState.BusyPercent);
+            this.SetConvertState(ConvertState.Processing);
 
             try
             {
@@ -222,7 +222,14 @@ namespace Vitomu.Services.Convert
                         if (match.Success)
                         {
                             double progressPercent = double.Parse(match.Groups["percentage"].Value, CultureInfo.InvariantCulture);
-                            this.SetConvertState(ConvertState.BusyPercent, progressPercent);
+                            this.SetConvertState(ConvertState.Downloading, progressPercent);
+                        }
+                        else
+                        {
+                            if (e.Data.Contains("[ffmpeg] Destination"))
+                            {
+                                this.SetConvertState(ConvertState.Converting);
+                            }
                         }
                     }
                 };
@@ -251,7 +258,7 @@ namespace Vitomu.Services.Convert
 
         private void ConvertLocalVideo(string tempFolder, string uri)
         {
-            this.SetConvertState(ConvertState.BusyIndeterminate);
+            this.SetConvertState(ConvertState.Processing);
 
             try
             {
@@ -273,6 +280,7 @@ namespace Vitomu.Services.Convert
                 this.ffmpegProcess.OutputDataReceived += (sender, e) =>
                 {
                     LogClient.Info("ffmpeg: {0}", e.Data);
+                    this.SetConvertState(ConvertState.Converting);
                 };
 
                 this.ffmpegProcess.ErrorDataReceived += (sender, e) =>
