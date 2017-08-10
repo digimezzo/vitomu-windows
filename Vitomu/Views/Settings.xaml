@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Vitomu.Views.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+             DataContext="{Binding Settings, Source={StaticResource Locator}}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="6,16,6,16" Padding="10,0,10,0" PanningMode="Both">
+        <StackPanel>
+            <Label Style="{StaticResource TitleLabel}" Content="{DynamicResource Language_Output}" />
+            <TextBlock Margin="0,8,0,0" Text="{DynamicResource Language_Audio_Format}" Foreground="{DynamicResource Brush_White}"/>
+            <ComboBox Margin="0,8,0,0" HorizontalAlignment="Left" MinWidth="100"/>
+            <TextBlock Margin="0,16,0,0" Text="{DynamicResource Language_Bitrate}" Foreground="{DynamicResource Brush_White}"/>
+            <ComboBox Margin="0,8,0,0" HorizontalAlignment="Left" MinWidth="100"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -2,13 +2,21 @@
 <Settings>
   <Namespace Name="Configuration">
     <Setting Name="Version">
-      <Value>1</Value>
+      <Value>2</Value>
     </Setting>
     <Setting Name="IsPortable">
       <Value>False</Value>
     </Setting>
     <Setting Name="Language">
       <Value>EN</Value>
+    </Setting>
+  </Namespace>
+  <Namespace Name="Output">
+    <Setting Name="Format">
+      <Value>1</Value>
+    </Setting>
+    <Setting Name="Bitrate">
+      <Value>320</Value>
     </Setting>
   </Namespace>
 </Settings>

@@ -10,4 +10,8 @@
   <Text Key="ViewInFolder">在文件夹中显示</Text>
   <Text Key="Play">播放</Text>
   <Text Key="Donate">捐助</Text>
+  <Text Key="Settings">Settings</Text>
+  <Text Key="Output">Output</Text>
+  <Text Key="Audio_Format">Audio format</Text>
+  <Text Key="Bitrate">Bit rate</Text>
 </Language>

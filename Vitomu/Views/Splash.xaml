@@ -11,7 +11,7 @@
     <Grid>
         <Ellipse Width="90" Height="90" Fill="{DynamicResource Brush_White}"/>
         <Viewbox Panel.ZIndex="1" Width="100" Height="100">
-            <Path Data="{StaticResource VitomuIcon}" Fill="{DynamicResource Brush_Pink}"/>
+            <Path Data="{StaticResource VitomuIcon}" Fill="{DynamicResource Brush_Accent}"/>
         </Viewbox>
     </Grid>
 </Page>

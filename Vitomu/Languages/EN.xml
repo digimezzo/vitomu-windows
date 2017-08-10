@@ -22,4 +22,8 @@
   <Text Key="Components">Components</Text>
   <Text Key="Downloading">Downloading</Text>
   <Text Key="Processing">Processing</Text>
+  <Text Key="Settings">Settings</Text>
+  <Text Key="Output">Output</Text>
+  <Text Key="Audio_Format">Audio format</Text>
+  <Text Key="Bitrate">Bit rate</Text>
 </Language>

@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Vitomu;component/Resources/Styles/ComboBox.xaml" />
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/FontFamilies.xaml" />
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/Geometries.xaml" />
         <ResourceDictionary Source="/Vitomu;component/Resources/Styles/HamburgerButtonStyle.xaml" />

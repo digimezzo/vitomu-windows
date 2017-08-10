@@ -16,7 +16,7 @@
                 <Grid>
                     <Ellipse Width="50" Height="50" Fill="{DynamicResource Brush_White}"/>
                     <Viewbox Panel.ZIndex="1" Width="56" Height="56">
-                        <Path Data="{StaticResource VitomuIcon}" Fill="{DynamicResource Brush_Pink}"/>
+                        <Path Data="{StaticResource VitomuIcon}" Fill="{DynamicResource Brush_Accent}"/>
                     </Viewbox>
                 </Grid>
                 <Label Margin="15,-4,0,0" Padding="0" VerticalAlignment="Center" Content="{x:Static base:ProductInformation.ApplicationDisplayName}" Foreground="{DynamicResource Brush_White}" FontWeight="Light" FontSize="44"/>
@@ -25,7 +25,7 @@
                 <TextBlock Text="{DynamicResource Language_Version}" Foreground="{DynamicResource Brush_White}"/>
                 <TextBlock Text=":" Margin="0,0,8,0" Foreground="{DynamicResource Brush_White}"/>
                 <TextBlock Text="{Binding Package.FormattedVersion}" Margin="0,0,8,0" FontWeight="Bold" Foreground="{DynamicResource Brush_White}"/>
-                <Border Background="{DynamicResource Brush_Pink}" Padding="4,2,4,2" CornerRadius="2">
+                <Border Background="{DynamicResource Brush_Accent}" Padding="4,2,4,2" CornerRadius="2">
                     <TextBlock Text="{Binding Package.Label}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource Brush_White}"/>
                 </Border>
             </StackPanel>
