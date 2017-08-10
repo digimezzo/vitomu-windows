@@ -163,6 +163,10 @@ namespace Vitomu.Services.Convert
         {
             try
             {
+                // Get the audio format and bit rate from the settings
+                AudioFormat format = FileFormats.GetValidAudioFormat(SettingsClient.Get<string>("Output", "Format"));
+                int bitRate = FileFormats.GetValidBitRate(SettingsClient.Get<int>("Output", "BitRate"));
+
                 // Create a temporary directory
                 string tempFolder = Path.Combine(this.workingFolder, Guid.NewGuid().ToString());
 
@@ -174,12 +178,12 @@ namespace Vitomu.Services.Convert
                 if (this.IsVideoUrl(uri))
                 {
                     // Process the video URL
-                    this.ConvertOnlineVideo(tempFolder, uri);
+                    this.ConvertOnlineVideo(tempFolder, uri, format, bitRate);
                 }
                 else if (this.IsVideoFile(uri))
                 {
                     // Process the video file
-                    this.ConvertLocalVideo(tempFolder, uri);
+                    this.ConvertLocalVideo(tempFolder, uri, format, bitRate);
                 }
             }
             catch (Exception ex)
@@ -188,7 +192,7 @@ namespace Vitomu.Services.Convert
                 this.SetConvertState(ConvertState.Failed);
             }
         }
-        private void ConvertOnlineVideo(string tempFolder, string uri)
+        private void ConvertOnlineVideo(string tempFolder, string uri, AudioFormat format, int bitRate)
         {
             this.SetConvertState(ConvertState.Processing);
 
@@ -197,7 +201,7 @@ namespace Vitomu.Services.Convert
                 ProcessStartInfo youtubeDlStartInfo = new ProcessStartInfo()
                 {
                     FileName = "youtube-dl.exe",
-                    Arguments = $"{uri} --no-playlist --output \"{tempFolder}\\%(title)s.%(ext)s\" -f bestaudio --extract-audio --audio-format mp3 --audio-quality 320k",
+                    Arguments = $"{uri} --no-playlist --output \"{tempFolder}\\%(title)s.%(ext)s\" -f bestaudio --extract-audio --audio-format {format.YoutubedlCodec} --audio-quality {bitRate}k",
                     CreateNoWindow = true,
                     RedirectStandardError = true,
                     RedirectStandardInput = true,
@@ -242,7 +246,7 @@ namespace Vitomu.Services.Convert
                 this.youtubedlProcess.Exited += (_, __) =>
                 {
                     // Move the audio file to the music folder
-                    this.ProcessAudioFile(tempFolder);
+                    this.ProcessAudioFile(tempFolder, format);
                 };
 
                 this.youtubedlProcess.Start();
@@ -256,7 +260,7 @@ namespace Vitomu.Services.Convert
             }
         }
 
-        private void ConvertLocalVideo(string tempFolder, string uri)
+        private void ConvertLocalVideo(string tempFolder, string uri, AudioFormat format, int bitRate)
         {
             this.SetConvertState(ConvertState.Processing);
 
@@ -265,7 +269,7 @@ namespace Vitomu.Services.Convert
                 ProcessStartInfo ffmpegStartInfo = new ProcessStartInfo()
                 {
                     FileName = "ffmpeg.exe",
-                    Arguments = $"-i \"{uri}\" -b:a 192K -vn \"{Path.Combine(tempFolder, Path.GetFileNameWithoutExtension(uri) + ".mp3")}\"",
+                    Arguments = $"-i \"{uri}\" -b:a {bitRate}K -vn \"{Path.Combine(tempFolder, Path.GetFileNameWithoutExtension(uri) + format.Extension)}\"",
                     CreateNoWindow = true,
                     RedirectStandardError = true,
                     RedirectStandardInput = true,
@@ -291,7 +295,7 @@ namespace Vitomu.Services.Convert
                 this.ffmpegProcess.Exited += (_, __) =>
                 {
                     // Move the audio file to the music folder
-                    this.ProcessAudioFile(tempFolder);
+                    this.ProcessAudioFile(tempFolder, format);
                 };
 
                 this.ffmpegProcess.Start();
@@ -305,7 +309,7 @@ namespace Vitomu.Services.Convert
             }
         }
 
-        private void ProcessAudioFile(string tempFolder)
+        private void ProcessAudioFile(string tempFolder, AudioFormat format)
         {
             // Create the music folder. If this fails, we cannot continue (let it crash).
             this.CreateMusicFolder();
@@ -313,14 +317,14 @@ namespace Vitomu.Services.Convert
             try
             {
                 // Move the audio file to the music folder
-                string[] files = Directory.GetFiles(tempFolder, "*.mp3");
+                string[] files = Directory.GetFiles(tempFolder, "*" + format.Extension);
 
                 if (files.Count() > 0)
                 {
                     string firstFoundFile = files.First();
                     string movedAudioFile = Path.Combine(this.musicFolder, Path.GetFileName(firstFoundFile));
 
-                    LogClient.Info("File of type {0} was found in the temporary folder: {1}\\{2}", "mp3", tempFolder, firstFoundFile);
+                    LogClient.Info("File of type {0} was found in the temporary folder: {1}\\{2}", format.Extension, tempFolder, firstFoundFile);
 
                     // If a file was found: move it to the music folder.
                     int counter = 0;
@@ -338,7 +342,7 @@ namespace Vitomu.Services.Convert
                 }
                 else
                 {
-                    LogClient.Info("File of type {0} was not found", "mp3");
+                    LogClient.Info("File of type {0} was not found", format.Extension);
                     this.SetConvertState(ConvertState.Failed);
                 }
             }

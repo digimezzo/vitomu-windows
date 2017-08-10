@@ -11,9 +11,9 @@
         <StackPanel>
             <Label Style="{StaticResource TitleLabel}" Content="{DynamicResource Language_Output}" />
             <TextBlock Margin="0,8,0,0" Text="{DynamicResource Language_Audio_Format}" Foreground="{DynamicResource Brush_White}"/>
-            <ComboBox Margin="0,8,0,0" HorizontalAlignment="Left" MinWidth="100"/>
+            <ComboBox Margin="0,8,0,0" HorizontalAlignment="Left" MinWidth="100" ItemsSource="{Binding AudioFormats}" SelectedItem="{Binding SelectedAudioFormat}"/>
             <TextBlock Margin="0,16,0,0" Text="{DynamicResource Language_Bitrate}" Foreground="{DynamicResource Brush_White}"/>
-            <ComboBox Margin="0,8,0,0" HorizontalAlignment="Left" MinWidth="100"/>
+            <ComboBox Margin="0,8,0,0" HorizontalAlignment="Left" MinWidth="100" ItemsSource="{Binding BitRates}" SelectedItem="{Binding SelectedBitRate}"/>
         </StackPanel>
     </ScrollViewer>
 </UserControl>

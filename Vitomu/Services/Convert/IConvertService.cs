@@ -1,4 +1,6 @@
-﻿namespace Vitomu.Services.Convert
+﻿using Vitomu.Base;
+
+namespace Vitomu.Services.Convert
 {
     public delegate void ConvertStateChangedHander(ConvertState convertState, double convertPercent);
     public interface IConvertService

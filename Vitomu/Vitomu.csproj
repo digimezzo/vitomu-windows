@@ -84,10 +84,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Base\Constants.cs" />
     <Compile Include="Base\ContactInformation.cs" />
     <Compile Include="Base\Defaults.cs" />
     <Compile Include="Base\FileFormats.cs" />
+    <Compile Include="Base\AudioFormat.cs" />
     <Compile Include="Base\ProductInformation.cs" />
     <Compile Include="Controls\VitomuWindow.cs" />
     <Compile Include="Converters\ConvertStateToVisibilityConverter.cs" />

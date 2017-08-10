@@ -13,9 +13,9 @@
   </Namespace>
   <Namespace Name="Output">
     <Setting Name="Format">
-      <Value>1</Value>
+      <Value>mp3</Value>
     </Setting>
-    <Setting Name="Bitrate">
+    <Setting Name="BitRate">
       <Value>320</Value>
     </Setting>
   </Namespace>
