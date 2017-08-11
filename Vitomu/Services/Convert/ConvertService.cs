@@ -332,7 +332,7 @@ namespace Vitomu.Services.Convert
                     while (File.Exists(movedAudioFile))
                     {
                         counter++;
-                        movedAudioFile = Path.Combine(this.musicFolder, $"{Path.GetFileNameWithoutExtension(firstFoundFile)} ({counter}).{Path.GetExtension(firstFoundFile)}");
+                        movedAudioFile = Path.Combine(this.musicFolder, $"{Path.GetFileNameWithoutExtension(firstFoundFile)} ({counter}){Path.GetExtension(firstFoundFile)}");
                     }
 
                     File.Move(firstFoundFile, movedAudioFile);
