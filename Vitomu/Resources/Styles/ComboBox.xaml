@@ -138,8 +138,7 @@
                                 <!-- This helper border avoids text coming through the sides of the popup at desktop scaling > 100% -->
                                 <Border BorderThickness="0" Margin="0.5" Background="{DynamicResource Brush_Grey}"/>
                                 <Border x:Name="DropDownBorder"
-                                        BorderThickness="1" 
-                                        BorderBrush="{DynamicResource RG_BorderBrush}" 
+                                        BorderThickness="0" 
                                         Background="{DynamicResource Brush_Grey}">
                                     <ScrollViewer>
                                         <StackPanel IsItemsHost="True"
