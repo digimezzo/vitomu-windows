@@ -2,6 +2,7 @@
 using Digimezzo.Utilities.Settings;
 using GalaSoft.MvvmLight;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Vitomu.Base;
 
@@ -75,7 +76,7 @@ namespace Vitomu.ViewModels
 
             await Task.Run(() =>
             {
-                foreach (AudioFormat format in FileFormats.SupportedAudioFormats)
+                foreach (AudioFormat format in FileFormats.SupportedAudioFormats.OrderBy(f => f.Name))
                 {
                     localAudioFormats.Add(format);
                 }
