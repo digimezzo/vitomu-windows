@@ -1,4 +1,4 @@
-2017-07-11: Vitomu 1.1 Build 9
+2017-08-11: Vitomu 1.1 Build 9
 ------------------------------
 
 - Added options to choose output audio format and bit rate

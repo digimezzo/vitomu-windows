@@ -16,7 +16,8 @@ namespace Vitomu.Base
             new AudioFormat("mp3","MP3","mp3",".mp3"),
             new AudioFormat("ogg","Ogg Vorbis","vorbis",".ogg"),
             new AudioFormat("flac","FLAC","flac",".flac"),
-            new AudioFormat("m4a","M4A","m4a",".m4a")
+            new AudioFormat("m4a","M4A","m4a",".m4a"),
+            new AudioFormat("aac","AAC","aac",".aac")
         };
 
         public static AudioFormat GetValidAudioFormat(string audioFormatId)
