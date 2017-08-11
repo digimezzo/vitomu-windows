@@ -82,6 +82,7 @@
             <File Source="Digimezzo.WPFControls.dll" />
             <File Source="ffmpeg.exe" />
             <File Source="ffprobe.exe" />
+            <File Source="msvcr100.dll" />
             <File Source="youtube-dl.exe" />
           </Component>
         </Directory>

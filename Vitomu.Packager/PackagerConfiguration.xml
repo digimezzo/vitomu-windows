@@ -26,6 +26,7 @@
         <File>System.Windows.Interactivity.dll</File>
         <File>ffmpeg.exe</File>
         <File>ffprobe.exe</File>
+        <File>msvcr100.dll</File>
         <File>youtube-dl.exe</File>
       </Files>
     </Portable>

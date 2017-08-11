@@ -244,6 +244,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Resource Include="Languages\Zh-CN.xml" />
+    <Content Include="msvcr100.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Vitomu.Icons.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
