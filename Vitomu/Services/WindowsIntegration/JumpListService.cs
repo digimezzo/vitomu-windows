@@ -34,7 +34,7 @@ namespace Vitomu.Services.WindowsIntegration
 
                     this.jumpList.JumpItems.Add(new JumpTask
                     {
-                        Title = ResourceUtils.GetStringResource("Language_Donate"),
+                        Title = ResourceUtils.GetStringResource("Language_Donate_With_PayPal"),
                         Arguments = "/donate " + ContactInformation.PayPalLink,
                         Description = "",
                         IconResourcePath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Defaults.IconsLibrary),

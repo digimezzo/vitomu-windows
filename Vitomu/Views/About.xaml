@@ -30,11 +30,11 @@
                 </Border>
             </StackPanel>
             <TextBlock Text="{x:Static base:ProductInformation.Copyright}" Margin="0,8,0,0" Foreground="{DynamicResource Brush_White}"/>
-            <Button Margin="0,8,0,0" Content="{DynamicResource Language_License}" Style="{StaticResource LinkButton}" Command="{Binding ShowLicenseCommand}"/>
+            <Button Margin="0,16,0,0" Content="{DynamicResource Language_License}" HorizontalAlignment="Left" Style="{StaticResource DenseMaterialButton}" Command="{Binding ShowLicenseCommand}"/>
             <!-- Donate -->
             <Label Margin="0,16,0,0" Style="{StaticResource TitleLabel}" Content="{DynamicResource Language_Donate}" />
             <TextBlock Margin="0,8,0,0" Text="{DynamicResource Language_Do_You_Like_Application}" Foreground="{DynamicResource Brush_White}"/>
-            <Button Style="{StaticResource DenseMaterialButton}" Margin="0,16,0,0" HorizontalAlignment="Left" Content="{DynamicResource Language_Donate}" ToolTip="{DynamicResource Language_Donate_With_PayPal}" Command="{Binding OpenLinkCommand}" CommandParameter="{x:Static base:ContactInformation.PayPalLink}" />
+            <Button Style="{StaticResource LinkButton}" Margin="0,8,0,0" HorizontalAlignment="Left" Content="{DynamicResource Language_Donate_With_PayPal}" Command="{Binding OpenLinkCommand}" CommandParameter="{x:Static base:ContactInformation.PayPalLink}" />
             <!-- Contact us -->
             <Label Margin="0,16,0,0" Style="{StaticResource TitleLabel}" Content="{DynamicResource Language_Contact_Us}" />
             <StackPanel Orientation="Horizontal" Margin="0,8,0,0">

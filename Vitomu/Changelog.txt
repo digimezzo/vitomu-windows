@@ -1,5 +1,5 @@
-2017-08-11: Vitomu 1.1 Build 9
-------------------------------
+2017-08-11: Vitomu 1.1 Build 10
+-------------------------------
 
 - Added options to choose output audio format and bit rate
 - Fixed impossibility to decode videos on 32 bit versions of Windows
