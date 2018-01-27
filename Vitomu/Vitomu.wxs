@@ -59,6 +59,8 @@
           <Directory Id="LANGUAGESFOLDER" Name="Languages">
             <Component Id="LANGUAGESCMP" DiskId="1" Guid="2C70C945-50F3-4155-B246-20C85323644F">
               <File Source="Languages\EN.xml" />
+              <File Source="Languages\PL.xml" />
+              <File Source="Languages\ZH-CN.xml" />
             </Component>
           </Directory>
           <!-- Application -->
