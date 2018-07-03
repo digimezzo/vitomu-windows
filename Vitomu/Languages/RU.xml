@@ -2,7 +2,7 @@
 <Language Code="RU" Name="Russian">
   <Text Key="ISO639-1">RU</Text>
   <Text Key="Convert">Конвертировать</Text>
-  <Text Key="About">Про</Text>
+  <Text Key="About">О программе</Text>
   <Text Key="DropVideo">Перенесите видео сюда</Text>
   <Text Key="Converting">Конвертация</Text>
   <Text Key="ConversionFailed">Конвертация не удалась</Text>
