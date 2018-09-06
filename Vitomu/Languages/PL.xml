@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
--<Language Name="Polish" Code="PL">
-<Text Key="ISO639-1">PL</Text>
-<Text Key="Convert">Konwertuj</Text>
-<Text Key="About">O...</Text>
-<Text Key="DropVideo">Upusc wideo tutaj</Text>
-<Text Key="Converting">Konwersja</Text>
-<Text Key="ConversionFailed">Konwersja nieudana</Text>
-<Text Key="ConversionSuccessful">Konwersja zakonczona sukcesem!</Text>
-<Text Key="ViewInFolder">Wyswietl w folderze</Text>
-<Text Key="Play">Odtwarzaj</Text>
-<Text Key="Donate">Darowizna</Text>
-<Text Key="Version">Wersja</Text>
-<Text Key="License">Licencja</Text>
-<Text Key="Ok">Ok</Text>
-<Text Key="Do_You_Like_Application">Czy podoba ci sie ta aplikacja? Kliknij tutaj, aby przekazac darowizne. Dziekuje Ci!</Text>
-<Text Key="Donate_With_PayPal">Przekaz darowizne w systemie PayPal</Text>
-<Text Key="Contact_Us">Skontaktuj sie z nami</Text>
-<Text Key="Website">Strona www</Text>
-<Text Key="Email">E-mail</Text>
-<Text Key="Social_Networks">Portale spolecznosciowe</Text>
-<Text Key="Components">Komponenty</Text>
-<Text Key="Downloading">Sciaganie</Text>
-<Text Key="Processing">Przetwarzanie</Text>
-<Text Key="Settings">Ustawienia</Text>
-<Text Key="Output">Wydajnosc</Text>
-<Text Key="Audio_Format">Format audio</Text>
-<Text Key="Bitrate">Szybkosc transmisji</Text>
+<Language Name="Polish" Code="PL">
+  <Text Key="ISO639-1">PL</Text>
+  <Text Key="Convert">Konwertuj</Text>
+  <Text Key="About">O...</Text>
+  <Text Key="DropVideo">Upusc wideo tutaj</Text>
+  <Text Key="Converting">Konwersja</Text>
+  <Text Key="ConversionFailed">Konwersja nieudana</Text>
+  <Text Key="ConversionSuccessful">Konwersja zakonczona sukcesem!</Text>
+  <Text Key="ViewInFolder">Wyswietl w folderze</Text>
+  <Text Key="Play">Odtwarzaj</Text>
+  <Text Key="Donate">Darowizna</Text>
+  <Text Key="Version">Wersja</Text>
+  <Text Key="License">Licencja</Text>
+  <Text Key="Ok">Ok</Text>
+  <Text Key="Do_You_Like_Application">Czy podoba ci sie ta aplikacja? Kliknij tutaj, aby przekazac darowizne. Dziekuje Ci!</Text>
+  <Text Key="Donate_With_PayPal">Przekaz darowizne w systemie PayPal</Text>
+  <Text Key="Contact_Us">Skontaktuj sie z nami</Text>
+  <Text Key="Website">Strona www</Text>
+  <Text Key="Email">E-mail</Text>
+  <Text Key="Social_Networks">Portale spolecznosciowe</Text>
+  <Text Key="Components">Komponenty</Text>
+  <Text Key="Downloading">Sciaganie</Text>
+  <Text Key="Processing">Przetwarzanie</Text>
+  <Text Key="Settings">Ustawienia</Text>
+  <Text Key="Output">Wydajnosc</Text>
+  <Text Key="Audio_Format">Format audio</Text>
+  <Text Key="Bitrate">Szybkosc transmisji</Text>
 </Language>
