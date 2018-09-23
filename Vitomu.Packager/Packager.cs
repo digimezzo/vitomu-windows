@@ -19,7 +19,7 @@ namespace Vitomu.Packager
 #endif
 
             var worker = new PackageCreator("Vitomu", an.Version, config);
-            worker.Execute();
+            worker.ExecuteAsync().Wait();
         }
     }
 }
