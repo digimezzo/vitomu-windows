@@ -1,7 +1,7 @@
-2018-09-06: Vitomu 1.2
+2018-09-23: Vitomu 1.2
 ----------------------
 
-- Fixed "certificate verify failed" error on some computers when downloading online videos
+- Fixed multiple issues when downloading online videos
 
 
 2017-08-11: Vitomu 1.1

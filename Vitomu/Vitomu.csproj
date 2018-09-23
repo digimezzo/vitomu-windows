@@ -243,6 +243,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Dopamine.exe" />
     <Content Include="Languages\PL.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
