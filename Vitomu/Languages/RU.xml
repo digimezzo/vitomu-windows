@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language Code="RU" Name="Russian">
+  <Text Key="ISO639-1">RU</Text>
+  <Text Key="Convert">Конвертировать</Text>
+  <Text Key="About">О программе</Text>
+  <Text Key="DropVideo">Перенесите видео сюда</Text>
+  <Text Key="Converting">Конвертация</Text>
+  <Text Key="ConversionFailed">Конвертация не удалась</Text>
+  <Text Key="ConversionSuccessful">Конвертация успешно выполнена!</Text>
+  <Text Key="ViewInFolder">Показать в папке</Text>
+  <Text Key="Play">Воспроизвести</Text>
+  <Text Key="Donate">Пожертвовать</Text>
+  <Text Key="Version">Версия</Text>
+  <Text Key="License">Лицензия</Text>
+  <Text Key="Ok">Подтвердить</Text>
+  <Text Key="Do_You_Like_Application">Нравится ли Вам это приложение? Пожалуйста, нажмите сюда,чтобы пожертвовать. Спасибо!</Text>
+  <Text Key="Donate_With_PayPal">Пожертвовать через PayPal</Text>
+  <Text Key="Contact_Us">Связаться с нами</Text>
+  <Text Key="Website">Веб-сайт</Text>
+  <Text Key="Email">Электронная почта</Text>
+  <Text Key="Social_Networks">Социальные сети</Text>
+  <Text Key="Components">Компоненты</Text>
+  <Text Key="Downloading">Загрузка</Text>
+  <Text Key="Processing">Обработка</Text>
+  <Text Key="Settings">Настройки</Text>
+  <Text Key="Output">Выход</Text>
+  <Text Key="Audio_Format">Формат аудио</Text>
+  <Text Key="Bitrate">Битрейт</Text>
+</Language>
