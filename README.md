@@ -12,3 +12,7 @@ Downloads are available at [http://www.digimezzo.com](http://www.digimezzo.com)
 ## Important ##
 
 This software uses code of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>LGPLv2.1</a> and its source can be downloaded <a href="https://github.com/digimezzo/Vitomu">here</a>
+
+## Deprecated ##
+
+This project is deprecated and will not be updated anymore. Please download the new version at: https://github.com/digimezzo/vitomu-electron
