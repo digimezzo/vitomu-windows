@@ -1,6 +1,6 @@
 ![Vitomu](Vitomu.full.png)
 
-# Vitomu (deprecated)
+# Vitomu (for Windows)
 Vitomu stands for **VI**deo **TO** **MU**sic converter. It allows easy conversion of online and offline videos to audio files. Just drop a URL or a local video file on the target to start the conversion. The current version supports dropping URL's of Youtube videos, and dropping of local MKV and MP4 files. The output format is currently MP3, but more output options are planned for the next version.
 
 Downloads are available at [http://www.digimezzo.com](http://www.digimezzo.com)
@@ -13,6 +13,6 @@ Downloads are available at [http://www.digimezzo.com](http://www.digimezzo.com)
 
 This software uses code of <a href=http://ffmpeg.org>FFmpeg</a> licensed under the <a href=http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html>LGPLv2.1</a> and its source can be downloaded <a href="https://github.com/FFmpeg/FFmpeg">here</a>
 
-## Deprecated ##
+## Important ##
 
-This project is deprecated and will not be updated anymore. Please download the new version at: https://github.com/digimezzo/vitomu-electron
+This project will not be updated anymore. The new version is available here: https://github.com/digimezzo/vitomu
